@@ -1,8 +1,8 @@
-# GPT-Reworder
+# GPT-BookFramework
 
 ## Welcome to this project
 
-This project surpasses the length constraints of using OpenAI Chat-LLMs, such as ChatGPT, enabling you to converse with any long document. It expedites comprehension of the content and facilitates the acquisition of valuable insights. Compared with ChatPDF, it accommodates various file formats, including PDF, doc, docx, txt, and web URLs. The implementation of this project is straightforward to follow, expand, and efficient for integration into other applications.
+This project surpasses the length constraints of using OpenAI ChatGPT, enabling you to upload long document. It expedites comprehension of the content and facilitates the acquisition of valuable insights. Compared with ChatPDF, it accommodates various file formats, including PDF, doc, docx, txt, and web URLs. The implementation of this project is straightforward to follow, expand, and efficient for integration into other applications.
 The best use case is to re word long doccuments
 
 ## Dependencies
@@ -17,6 +17,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+WARNING, This is very expensive to run and uses a large amount of credits
 
 In the **demo.ipynb**, we provide a simple and clear procedure:
 

@@ -70,7 +70,7 @@ def get_embedding(text, model="text-embedding-ada-002"):
 	return openai.Embedding.create(input = [text], model=model)['data'][0]['embedding']
 
 def get_summary(chunk):
-	content = "The following is a passage fragment. Please read it and re word and expand it, do not repher to it as paasage 1, passage 2 ect, use the same perspective and langaue as the original content, just re word it and make it uniuqe:"
+	content = "The following is a passage fragment. Please read it and create a framework of chapters that could be used to create a book:"
 
 	content += "\n" + chunk
 
@@ -148,13 +148,13 @@ def chatGPT_api(messages):
 	return completion.choices[0].message
 
 def get_qa_content(q, retrieved_text):
-	content = "After reading the passage fragments from the same document, please re write it all as a brand new 2000+ word document, no less, only more"
+	content = "After reading the passage fragments from the same document, please create a framework of all the chapters you would need to create this as a book, aim for a minimum of 10 chapters and maximum of 25, add information, context and sub chapters for each chapter"
 	content += "\nQuery: " + q
 
 	for i in range(len(retrieved_text)):
 		content += "\nPassage " + str(i + 1) + ": " + retrieved_text[i]
 
-	content += "\nAvoid explicitly using terms such as 'passage 1, 2 or 3' in your answer as the questioner may not know how the fragments are retrieved. Use the same perspective as the provided text, just re write it and expand it to make it original. You can use your own knowledge in addition to the provided information to enhance your response. Please use the same language as in the query to respond, to ensure that the questioner can understand."
+	content += "\nAvoid explicitly using terms such as 'passage 1, 2 or 3' in your answer as the questioner may not know how the fragments are retrieved. You can use your own knowledge in addition to the provided information to enhance your response. Please use the same language as in the query to respond, to ensure that the questioner can understand."
 
 	return content
 
